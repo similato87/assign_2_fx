@@ -18,6 +18,8 @@ Process finished with exit code 0
 package controller.buyer;
 
 
+import model.Buyer;
+
 public class BuyerController {
     public static void main(String[] args)  {
 
@@ -26,9 +28,19 @@ public class BuyerController {
         sunShineBuyersClub.register("tom");
         sunShineBuyersClub.register("george",400);
         sunShineBuyersClub.register("sam",50);
-        sunShineBuyersClub.register("ruth",50);
+        sunShineBuyersClub.register("ruth",150);
         sunShineBuyersClub.register("amid");
         sunShineBuyersClub.printAllBuyersWithName();
+
+        System.out.println("***************\nAfter upgrading");
+
+        sunShineBuyersClub.upgradeMembership("tom");
+        sunShineBuyersClub.upgradeMembership("george");
+        sunShineBuyersClub.upgradeMembership("sam");
+        sunShineBuyersClub.upgradeMembership("ruth");
+        sunShineBuyersClub.upgradeMembership("amid");
+        sunShineBuyersClub.printAllBuyersWithName();
+
 
     }
 

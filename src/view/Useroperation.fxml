@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="view.Useroperation"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Useroperation">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fdccf2" height="400.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4276a7" height="50.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <Button fx:id="btn_register" layoutX="50.0" layoutY="100.0" mnemonicParsing="false" onAction="#callprint" text="Print" />
+      <Button fx:id="btn_upgrade" layoutX="50.0" layoutY="200.0" mnemonicParsing="false" onAction="#callupgrade" text="Upgrade" />
+      <Text fx:id="txt_print" layoutX="170.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="400.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fill="#4fda7b" layoutX="229.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Buyer operation">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="txt_upgradeprint" layoutX="170.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="400.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+   </children>
 </AnchorPane>

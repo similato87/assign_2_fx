@@ -50,7 +50,8 @@ public class BuyerService {
     public void printAllBuyersWithName() {
 
         for (String name : getAllBuyersWithName().keySet()) {
-            System.out.println("\n" + name + "'s UserID and status are " + getAllBuyersWithName().get(name).getUserId() + " and " + getAllBuyersWithName().get(name).getStatus() + ", respectively.");
+            System.out.println("-------------------------------------------------------------------------------------");
+            System.out.println(name + "'s UserID and status are " + getAllBuyersWithName().get(name).getUserId() + " and " + getAllBuyersWithName().get(name).getStatus() + ", respectively.");
         }
 
     }
@@ -80,10 +81,15 @@ public class BuyerService {
         } else return !"NONMEMBER".equals(Objects.requireNonNull(getBuyerbyUserID(userId)).getStatus());
     }
 
-    public static void upgradeMembershipById(int userId) {
+    public static int upgradeMembershipById(int userId) {
         if (userId == 0) {
-            assignId(userId);
+            return assignId(Buyer.getLargestUserId());
         }
+        return userId;
+    }
+
+    public void upgradeMembership(String  userName){
+        getAllBuyersWithName().get(userName).setUserId(upgradeMembershipById(getAllBuyersWithName().get(userName).getUserId()));
     }
 
 
@@ -112,7 +118,7 @@ public class BuyerService {
     }
 
     public void register(String userName, int userId) {
-        BuyerDao.addUserByNameAndId(userName, userId);
+        BuyerDao.addUserByNameAndId(userName, assignId(userId));
     }
 
     public void register(String userName) {
