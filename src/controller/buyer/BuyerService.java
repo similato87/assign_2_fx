@@ -90,6 +90,7 @@ public class BuyerService {
 
     public void upgradeMembership(String  userName){
         getAllBuyersWithName().get(userName).setUserId(upgradeMembershipById(getAllBuyersWithName().get(userName).getUserId()));
+        getAllBuyersWithName().get(userName).setStatus(checkUserStatus(getAllBuyersWithName().get(userName).getUserId()));
     }
 
 
