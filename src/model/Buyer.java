@@ -19,7 +19,7 @@ public class Buyer {
     public Buyer(int userId) {
 
         this.userId = userId;
-        this.status = checkStatus(userId);
+        this.status = checkStatus();
 
 
         BuyersCount++;
@@ -51,8 +51,8 @@ public class Buyer {
     }
 
     //Invoke the inspection service in the service layer
-    private String checkStatus(int userId) {
-        return BuyerService.checkUserStatus(userId);
+    private String checkStatus() {
+        return BuyerService.checkUserStatus(this.userId);
 
 
     }

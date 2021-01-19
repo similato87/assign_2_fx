@@ -11,6 +11,7 @@ public class BuyerDao {
     private static Set<Buyer> buyerSet = new HashSet<>();
     private static Map<String, Buyer> buyerMap = new LinkedHashMap<>();
 
+
     //Return the buyer set
     public static Set<Buyer> getBuyerSet() {
         return buyerSet;
